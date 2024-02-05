@@ -1,3 +1,4 @@
+import 'package:aabdoo/views/notes_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,9 +11,12 @@ class NewsApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(useMaterial3: false),
+      theme: ThemeData(
+        useMaterial3: false,
+        brightness: Brightness.dark,
+      ),
       debugShowCheckedModeBanner: false,
-      home: Scaffold(),
+      home: const NotesView(),
     );
   }
 }
