@@ -1,4 +1,4 @@
-import 'package:aabdoo/widgets/edit_note_view_body.dart';
+import 'package:aabdoo/views/edit_note_view.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -11,7 +11,7 @@ class NoteItem extends StatelessWidget {
       onTap: () {
         Navigator.push(context, MaterialPageRoute(
           builder: (context) {
-            return const EditNotesViewBody();
+            return const EditNotesView();
           },
         ));
       },
