@@ -14,6 +14,7 @@ class NewsApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: false,
         brightness: Brightness.dark,
+        fontFamily: 'Poppins',
       ),
       debugShowCheckedModeBanner: false,
       home: const NotesView(),
