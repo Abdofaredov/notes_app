@@ -1,6 +1,9 @@
+import 'package:aabdoo/cubit/add_note_cubit/add_note_cubit.dart';
+import 'package:aabdoo/models/note_model.dart';
 import 'package:aabdoo/widgets/custom_bottom.dart';
 import 'package:aabdoo/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AddNoteForm extends StatefulWidget {
   const AddNoteForm({
@@ -50,6 +53,12 @@ class _AddNoteFormState extends State<AddNoteForm> {
             onTap: () {
               if (formKey.currentState!.validate()) {
                 formKey.currentState!.save();
+                var noteModel = NoteModel(
+                    title: title!,
+                    subTitle: subTitle!,
+                    date: DateTime.now().toString(),
+                    color: Colors.blue.value);
+                BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
               } else {
                 autovalidateMode = AutovalidateMode.always;
                 setState(() {});
