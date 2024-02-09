@@ -1,5 +1,4 @@
 import 'package:aabdoo/constants.dart';
-import 'package:aabdoo/cubit/add_note_cubit/add_note_cubit.dart';
 import 'package:aabdoo/models/note_model.dart';
 import 'package:aabdoo/simple_bloc_observer.dart';
 import 'package:aabdoo/views/notes_view.dart';

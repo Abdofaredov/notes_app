@@ -1,20 +1,17 @@
-import 'package:aabdoo/constants.dart';
-import 'package:aabdoo/cubit/add_note_cubit/add_note_state.dart';
 import 'package:aabdoo/cubit/notes_cubit/notes_state.dart';
 import 'package:aabdoo/models/note_model.dart';
 import 'package:bloc/bloc.dart';
-import 'package:hive_flutter/hive_flutter.dart';
+import 'package:hive/hive.dart';
 
-class NotesCubit extends Cubit<NotesCubitState> {
-  NotesCubit() : super(NotesCubitInitial());
+import '../../constants.dart';
 
-  fetchAllNotes() async {
-    try {
-      var notesBox = Hive.box<NoteModel>(kNotesBox);
-      List<NoteModel> notes = notesBox.values.toList();
-      emit(NotesCubitSuccess(notes: notes));
-    } catch (e) {
-      emit(NotesCubitFailure(errorMessage: e.toString()));
-    }
+class NotesCubit extends Cubit<NotesState> {
+  NotesCubit() : super(NotesInitial());
+
+  List<NoteModel>? notes;
+  fetchAllNotes() {
+    var notesBox = Hive.box<NoteModel>(kNotesBox);
+
+    notes = notesBox.values.toList();
   }
 }

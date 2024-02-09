@@ -1,19 +1,17 @@
-import 'package:aabdoo/models/note_model.dart';
+abstract class NotesState {}
 
-abstract class NotesCubitState {}
+class NotesInitial extends NotesState {}
 
-class NotesCubitInitial extends NotesCubitState {}
+// class NotesLoading extends NotesState {}
 
-class NotesCubitLoading extends NotesCubitState {}
+// class NotesSuccess extends NotesState {
+//   final List<NoteModel> notes;
 
-class NotesCubitSuccess extends NotesCubitState {
-  final List<NoteModel> notes;
+//   NotesSuccess({required this.notes});
+// }
 
-  NotesCubitSuccess({required this.notes});
-}
+// class NotesFailure extends NotesState {
+//   final String errorMessage;
 
-class NotesCubitFailure extends NotesCubitState {
-  final String errorMessage;
-
-  NotesCubitFailure({required this.errorMessage});
-}
+//   NotesFailure({required this.errorMessage});
+// }
