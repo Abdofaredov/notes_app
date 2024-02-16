@@ -1,4 +1,5 @@
 import 'package:aabdoo/constants.dart';
+import 'package:aabdoo/cubit/notes_cubit/notes_cubit.dart';
 import 'package:aabdoo/models/note_model.dart';
 import 'package:aabdoo/simple_bloc_observer.dart';
 import 'package:aabdoo/views/notes_view.dart';
@@ -19,14 +20,17 @@ class NewsApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        useMaterial3: false,
-        brightness: Brightness.dark,
-        fontFamily: 'Poppins',
+    return BlocProvider(
+      create: (context) => NotesCubit(),
+      child: MaterialApp(
+        theme: ThemeData(
+          useMaterial3: false,
+          brightness: Brightness.dark,
+          fontFamily: 'Poppins',
+        ),
+        debugShowCheckedModeBanner: false,
+        home: const NotesView(),
       ),
-      debugShowCheckedModeBanner: false,
-      home: const NotesView(),
     );
   }
 }
