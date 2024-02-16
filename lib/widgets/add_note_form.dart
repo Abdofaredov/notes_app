@@ -1,6 +1,7 @@
 import 'package:aabdoo/cubit/add_note_cubit/add_note_cubit.dart';
 import 'package:aabdoo/cubit/add_note_cubit/add_note_state.dart';
 import 'package:aabdoo/models/note_model.dart';
+import 'package:aabdoo/widgets/colors_list_view.dart';
 import 'package:aabdoo/widgets/custom_bottom.dart';
 import 'package:aabdoo/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
@@ -48,6 +49,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
             hintText: 'Content',
             maxLines: 5,
           ),
+          const ColorsListView(),
           const SizedBox(
             height: 32,
           ),
