@@ -1,7 +1,7 @@
 import 'package:aabdoo/cubit/notes_cubit/notes_cubit.dart';
 import 'package:aabdoo/cubit/notes_cubit/notes_state.dart';
 import 'package:aabdoo/models/note_model.dart';
-import 'package:aabdoo/widgets/custom_note_item.dart';
+import 'package:aabdoo/widgets/note_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
