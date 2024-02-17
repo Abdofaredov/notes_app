@@ -2,6 +2,7 @@ import 'package:aabdoo/cubit/notes_cubit/notes_cubit.dart';
 import 'package:aabdoo/models/note_model.dart';
 import 'package:aabdoo/widgets/custom_app_bar.dart';
 import 'package:aabdoo/widgets/custom_text_field.dart';
+import 'package:aabdoo/widgets/edit_note_colors_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -50,6 +51,8 @@ class _EditNotesViewBodyState extends State<EditNotesViewBody> {
             hintText: widget.note.content,
             maxLines: 5,
           ),
+          const SizedBox(height: 16),
+          EditNotesColorsList(note: widget.note),
         ],
       ),
     );
