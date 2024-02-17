@@ -3,6 +3,7 @@ import 'package:aabdoo/models/note_model.dart';
 import 'package:aabdoo/views/edit_note_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class NoteItem extends StatelessWidget {
@@ -53,6 +54,15 @@ class NoteItem extends StatelessWidget {
                   note.delete();
 
                   BlocProvider.of<NotesCubit>(context).fetchAllNotes();
+                  Fluttertoast.showToast(
+                    msg: "Note deleted successfully!",
+                    toastLength: Toast.LENGTH_SHORT,
+                    gravity: ToastGravity.BOTTOM,
+                    timeInSecForIosWeb: 1,
+                    backgroundColor: Colors.green,
+                    textColor: Colors.white,
+                    fontSize: 16.0,
+                  );
                 },
                 icon: const Icon(
                   FontAwesomeIcons.trash,

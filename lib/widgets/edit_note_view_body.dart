@@ -5,6 +5,7 @@ import 'package:aabdoo/widgets/custom_text_field.dart';
 import 'package:aabdoo/widgets/edit_note_colors_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class EditNotesViewBody extends StatefulWidget {
   const EditNotesViewBody({super.key, required this.note});
@@ -32,6 +33,16 @@ class _EditNotesViewBodyState extends State<EditNotesViewBody> {
               Navigator.pop(context);
 
               BlocProvider.of<NotesCubit>(context).fetchAllNotes();
+
+              Fluttertoast.showToast(
+                msg: "Note changed successfully!",
+                toastLength: Toast.LENGTH_SHORT,
+                gravity: ToastGravity.BOTTOM,
+                timeInSecForIosWeb: 1,
+                backgroundColor: Colors.green,
+                textColor: Colors.white,
+                fontSize: 16.0,
+              );
             },
             title: 'Edit Note',
             icon: Icons.check,
